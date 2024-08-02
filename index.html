@@ -21,15 +21,24 @@
 
             let codeElements = doc.querySelectorAll('code');
             let result_code = [];
+            let variableAssignment = '';
 
             codeElements.forEach(elem => {
                 let text = elem.textContent;
                 if (text.includes('date')) {
-                    result_code.push(`print(${text})`);
+                    if (text.includes('=')) {
+                        variableAssignment = text;
+                    } else {
+                        result_code.push(`print(${text})`);
+                    }
                 } else if (text.includes('#')) {
                     result_code.push(text);
                 }
             });
+
+            if (variableAssignment) {
+                result_code.unshift(variableAssignment);
+            }
 
             let final_code = result_code.join('\n\n');
             $('#outputCode code').text(final_code);
