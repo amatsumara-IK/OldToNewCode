@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to Python Formatter</title>
+</head>
+<body>
+    <h1>HTML to Python Formatter</h1>
+    <textarea id="inputHtml" rows="10" cols="80" placeholder="Вставьте ваш HTML код здесь..."></textarea><br><br>
+    <button onclick="formatCode()">Format Code</button><br><br>
+    <pre id="outputCode" class="language-python"><code></code></pre>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function formatCode() {
+            let html_code = $('#inputHtml').val();
+
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(html_code, 'text/html');
+
+            let codeElements = doc.querySelectorAll('code');
+            let result_code = [];
+
+            codeElements.forEach(elem => {
+                let text = elem.textContent;
+                if (text.includes('date')) {
+                    result_code.push(`print(${text})`);
+                } else if (text.includes('#')) {
+                    result_code.push(text);
+                }
+            });
+
+            let final_code = result_code.join('\n\n');
+            $('#outputCode code').text(final_code);
+        }
+    </script>
+</body>
+</html>
