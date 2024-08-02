@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,34 +14,34 @@
     <title>Code Transformer</title>
     <style>
 
-         @font-face {
-    font-family: 'Mont';
-    src: url('/Mont-Regular.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Mont';
-    src: url('/Mont-SemiBold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: bold;
-  }
+             @font-face {
+            font-family: 'Mont';
+            src: url('/Mont-Regular.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            }
+            
+            @font-face {
+            font-family: 'Mont';
+            src: url('/Mont-SemiBold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: bold;
+            }
 
 
         body {
 
             font-family: 'Mont', Arial, sans-serif !important;
-    font-style: normal !important;
-    font-weight: 600 !important;
-    box-sizing: border-box!important;
-    font-size: 18px!important;
-    line-height: 28px!important;
-    max-width: 864px;
-    margin: 30px auto;
-    word-break: break-word;
-    background-color: #f2f2f2;
-        }
+            font-style: normal !important;
+            font-weight: 600 !important;
+            box-sizing: border-box!important;
+            font-size: 18px!important;
+            line-height: 28px!important;
+            max-width: 864px;
+            margin: 30px auto;
+            word-break: break-word;
+            background-color: #f2f2f2;
+                }
     
         .container {
             display: flex;
@@ -69,28 +69,32 @@
             margin: 0 auto;
             max-width: 250px;
             position: relative;
-   
-    padding: 20px 24px 20px 24px;
-    color: #181818!important;
-    background-color: #a7f89b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: fit-content !important;
-    font-family: 'Mont-Regular', Arial, sans-serif !important;
-    font-style: normal;
-    font-weight: 500!important;
-    font-size: 17px!important;
-    line-height: 20px!important;
-    transition: all 0.3s ease; 
+            padding: 20px 24px;
+            color: #181818!important;
+            background-color: #a7f89b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: fit-content !important;
+            font-family: 'Mont-Regular', Arial, sans-serif !important;
+            font-style: normal;
+            font-weight: 500!important;
+            font-size: 17px!important;
+            line-height: 20px!important;
+            transition: all 0.2s ease ;
         }
-    
+
         button:hover {
-           
             background-color: #99f98b;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.19); 
-  	transform: translateY(-1px);
-            
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.19);
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            background-color: #88e87a; 
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset; 
+            transform: scale(0.99); 
+            transition: all 0.05s ease ;
         }
     
         .output-container {
