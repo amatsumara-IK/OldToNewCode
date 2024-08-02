@@ -84,7 +84,9 @@ const processText = (text) => {
         .replace(/<tr style="[^"]*?background-color: (?:#2e765e|#88cdb2);.*?">[^]*?<\/tr>/g, match => match.replace(/<td.*?>/g, `<th>`).replace(/<\/td>/g, `</th>`).replace(/<tr.*?>/g, `<tr>`))
         .replace(/<div style="display: flex; justify-content: center;.*?">\s*<div style="width: 40%;">([^]*?)<\/div>\s*<div class="vert-line-blue-green"><\/div>\s*<div style="width: 40%;">([^]*?)<\/div>\s*<\/div>/g, `<div class="row">$1<div class="vert-line"></div>$2</div>`)
         .replace(/<hr.*?>/g, `<div class="horizontal-line"></div>`)
-        .replace(/<div class="lib">/g, '<div class="color-container container-flex blue-container">');
+        .replace(/<div class="lib">/g, '<div class="color-container container-flex blue-container">')
+        .replace(/<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em; margin-bottom: 20px;">/g, '')
+        .replace(/<\/div>/g, '');
 
     if (processedText.includes('<div class="block">')) {
         processedText = processedText.replace(/<div class="block">/g, '<div class="main-block">');
