@@ -1,7 +1,4 @@
-
-
-
- const workArea = document.querySelector(`.work-area`);
+const workArea = document.querySelector(`.work-area`);
 const transformButton = document.getElementById('transformButton');
 const copyButton = document.getElementById('copyButton');
 const outputText = document.getElementById('outputText');
@@ -67,6 +64,9 @@ const copyToClipboard = () => {
     outputText.select();
     outputText.setSelectionRange(0, 99999); // Для мобильных устройств
     document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+
+   
 };
 
 // Функция для анимации
@@ -79,3 +79,7 @@ const playAnimation = () => {
 // Назначение обработчиков событий
 transformButton.addEventListener('click', transformCode);
  
+
+
+
+
